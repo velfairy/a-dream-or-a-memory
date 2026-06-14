@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction — YOUR NAME .com</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Construction page specific styles */
+    .construction-main {
+      text-align: center;
+      padding: 24px 12px;
+    }
+
+    .construction-sign {
+      display: inline-block;
+      border-top: var(--border-bevel-light);
+      border-left: var(--border-bevel-light);
+      border-bottom: var(--border-bevel-dark);
+      border-right: var(--border-bevel-dark);
+      background-color: #1a0000;
+      padding: 20px 28px;
+      margin: 16px auto;
+      max-width: 520px;
+    }
+
+    .construction-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: var(--shadow-hard);
+      animation: blink 0.8s steps(1) infinite;
+    }
+
+    /* CSS construction worker — 4-frame stepped animation */
+    .worker {
+      width: 60px;
+      height: 80px;
+      margin: 16px auto;
+      position: relative;
+    }
+
+    /* Head */
+    .worker__head {
+      width: 18px;
+      height: 18px;
+      background-color: #ffcc88;
+      border: 1px solid #000;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Hard hat */
+    .worker__hat {
+      width: 26px;
+      height: 8px;
+      background-color: var(--yellow);
+      border: 1px solid #000;
+      margin: 0 auto;
+      position: relative;
+      top: 2px;
+    }
+    .worker__hat::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 5px;
+      background-color: var(--orange);
+      border: 1px solid #000;
+      margin: 0 auto;
+      position: relative;
+      top: -1px;
+    }
+
+    /* Body */
+    .worker__body {
+      width: 22px;
+      height: 26px;
+      background-color: #ff6600;
+      border: 1px solid #000;
+      margin: 0 auto;
+    }
+
+    /* Arms — animated */
+    .worker__arms {
+      position: relative;
+      height: 0;
+      top: -20px;
+    }
+
+    .worker__arm-left,
+    .worker__arm-right {
+      position: absolute;
+      width: 14px;
+      height: 6px;
+      background-color: #ffcc88;
+      border: 1px solid #000;
+      top: 4px;
+    }
+
+    .worker__arm-left  { left: 6px;  transform-origin: right center; }
+    .worker__arm-right { right: 6px; transform-origin: left center; }
+
+    .worker__arm-left  { animation: arm-left  0.6s steps(2) infinite; }
+    .worker__arm-right { animation: arm-right 0.6s steps(2) infinite; }
+
+    /* Legs */
+    .worker__legs {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    .worker__leg {
+      width: 8px;
+      height: 18px;
+      background-color: #003399;
+      border: 1px solid #000;
+    }
+
+    .worker__leg:first-child { animation: leg-left  0.6s steps(2) infinite; }
+    .worker__leg:last-child  { animation: leg-right 0.6s steps(2) infinite; }
+
+    /* Shovel / tool */
+    .worker__tool {
+      position: absolute;
+      right: 2px;
+      top: -10px;
+      width: 4px;
+      height: 28px;
+      background-color: #888888;
+      border: 1px solid #000;
+      animation: tool-swing 0.6s steps(2) infinite;
+      transform-origin: bottom center;
+    }
+    .worker__tool::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 6px;
+      background-color: #aaaaaa;
+      border: 1px solid #000;
+      position: relative;
+      left: -3px;
+      top: -1px;
+    }
+
+    @keyframes arm-left  { 0% { transform: rotate(-30deg); } 50% { transform: rotate(20deg); } }
+    @keyframes arm-right { 0% { transform: rotate(20deg);  } 50% { transform: rotate(-30deg); } }
+    @keyframes leg-left  { 0% { transform: skewX(-10deg); } 50% { transform: skewX(10deg);  } }
+    @keyframes leg-right { 0% { transform: skewX(10deg);  } 50% { transform: skewX(-10deg); } }
+    @keyframes tool-swing { 0% { transform: rotate(-20deg); } 50% { transform: rotate(20deg); } }
+
+    .construction-msg {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-style: italic;
+      letter-spacing: 2px;
+      margin: 12px 0 6px;
+    }
+
+    .construction-sub {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="site-header__inner">
+
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/svgs/logo-placeholder.svg" alt="YOUR NAME .com" width="180" height="65">
+          </a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <img src="assets/svgs/menu-header.svg" alt="" class="site-nav__bg" aria-hidden="true">
+          <ul class="site-nav__links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT ME</a></li>
+            <li><a href="construction.html" class="nav-active">GALLERY</a></li>
+            <li><a href="construction.html">MORE STUFF</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">&#9776; MENU</button>
+
+      </div>
+
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT ME</a>
+        <a href="construction.html">GALLERY</a>
+        <a href="construction.html">MORE STUFF</a>
+      </nav>
+    </header>
+
+    <!-- Caution stripe top -->
+    <div class="caution-stripe caution-stripe--animated"></div>
+
+    <!-- MAIN -->
+    <main class="site-main site-main--full construction-main">
+
+      <div class="construction-sign">
+
+        <h1 class="heading-neon heading-neon--sm c-yellow" style="margin-bottom:8px;">
+          ★ THIS PAGE IS ★
+        </h1>
+
+        <p class="construction-title">
+          <span class="c-yellow">UNDER</span>
+          <span class="c-magenta"> CONSTRUCTION</span>
+        </p>
+
+        <!-- CSS worker -->
+        <div class="worker">
+          <div class="worker__hat"></div>
+          <div class="worker__head"></div>
+          <div class="worker__body">
+            <div class="worker__arms">
+              <div class="worker__arm-left"></div>
+              <div class="worker__arm-right">
+                <div class="worker__tool"></div>
+              </div>
+            </div>
+          </div>
+          <div class="worker__legs">
+            <div class="worker__leg"></div>
+            <div class="worker__leg"></div>
+          </div>
+        </div>
+
+        <p class="construction-msg">
+          <span class="c-cyan">Come Back Soon!!</span>
+        </p>
+        <p class="construction-sub">
+          This page is still being built. Check back later for updates!!
+        </p>
+
+        <img src="assets/svgs/divider.svg" alt="" class="deco-divider" style="margin:12px 0;">
+
+        <a href="index.html" class="heading-neon heading-neon--sm c-lime" style="display:inline-block; border:2px solid #00cc00; padding:6px 18px; text-shadow:2px 2px 0 #000;">
+          ← BACK TO HOME
+        </a>
+
+      </div>
+
+      <!-- Decorative accents -->
+      <div style="display:flex; justify-content:center; gap:16px; margin-top:16px;">
+        <img src="assets/svgs/flower-neon.svg" alt="" class="deco-flower">
+        <img src="assets/svgs/starburst.svg" alt="" class="deco-starburst" style="align-self:center;">
+        <img src="assets/svgs/flower-neon.svg" alt="" class="deco-flower">
+      </div>
+
+    </main>
+
+    <!-- Caution stripe bottom -->
+    <div class="caution-stripe caution-stripe--animated"></div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <nav class="site-footer__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="construction.html">Gallery</a>
+        <a href="construction.html">Guestbook</a>
+        <a href="construction.html">Links</a>
+      </nav>
+      <p class="site-footer__copy">
+        &copy; 2026 YOUR NAME .com &nbsp;|&nbsp;
+        <a href="construction.html">Privacy Policy</a> &nbsp;/&nbsp;
+        <a href="construction.html">Terms</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>
