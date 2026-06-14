@@ -6,13 +6,23 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
+   CUSTOM FONTS
+   ------------------------------------------------------------ */
+@font-face {
+  font-family: "Zenfix";
+  src: url("assets/fonts/Zenfix-Demo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
    2.1 CSS CUSTOM PROPERTIES
    ------------------------------------------------------------ */
 :root {
   /* Colors */
-  --bg:           #080008;
-  --nav-bg:       #330033;
-  --magenta:      #ff00ff;
+  --bg:           #fdf0a0;
+  --nav-bg:       #a8d8f0;
+  --magenta:      #cc1870;
   --lime:         #00cc00;
   --cyan:         #00cccc;
   --yellow:       #ffff00;
@@ -23,7 +33,7 @@
   --orange:       #ff6600;
 
   /* Typography */
-  --font-display: Impact, "Arial Black", "Franklin Gothic Heavy", Arial, sans-serif;
+  --font-display: "Zenfix", Impact, "Arial Black", Arial, sans-serif;
   --font-body:    Arial, Helvetica, sans-serif;
 
   /* Hard drop shadow (no blur — period accurate) */
@@ -120,7 +130,7 @@ ul {
 .site-sidebar {
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
-  background-color: var(--black);
+  background-color: #ff70b7;
   border-right: var(--border-neon);
   padding: 12px 8px;
 }
@@ -137,7 +147,7 @@ ul {
 }
 
 .site-footer {
-  background-color: var(--black);
+  background-color: #ff70b7;
   border-top: var(--border-neon);
   padding: 10px;
   text-align: center;
@@ -196,7 +206,7 @@ ul {
   font-style: italic;
   font-weight: normal;
   text-transform: uppercase;
-  color: var(--yellow);
+  color: #ffffa0;
   text-decoration: none;
   text-shadow: var(--shadow-hard);
   padding: 4px 10px;
@@ -210,7 +220,7 @@ ul {
 }
 
 .site-nav__links a.nav-active {
-  color: var(--cyan);
+  color: #a8d8f0;
 }
 
 /* Hamburger button (mobile only) */
@@ -303,7 +313,7 @@ body.nav-open .nav-mobile {
 
 /* Content block (text area on a dark card) */
 .content-block {
-  background-color: #0d000d;
+  background-color: rgba(255, 255, 255, 0.35);
   border: 2px solid var(--magenta);
   padding: 10px 12px;
   margin-bottom: 10px;
@@ -328,11 +338,11 @@ body.nav-open .nav-mobile {
 .heading-neon--sm { font-size: 16px; }
 
 /* Mixed-color word spans */
-.c-magenta { color: var(--magenta); }
-.c-lime    { color: var(--lime); }
-.c-cyan    { color: var(--cyan); }
-.c-yellow  { color: var(--yellow); }
-.c-hotpink { color: var(--hotpink); }
+.c-magenta { color: #ff9dc8; }
+.c-lime    { color: #b8f0b8; }
+.c-cyan    { color: #a8e8f0; }
+.c-yellow  { color: #fff0a0; }
+.c-hotpink { color: #ffb3d9; }
 .c-orange  { color: var(--orange); }
 .c-white   { color: var(--white); }
 
@@ -360,8 +370,8 @@ body.nav-open .nav-mobile {
   border-bottom: 1px solid #330033;
 }
 
-.sidebar-nav a:nth-child(odd)  { color: var(--hotpink); }
-.sidebar-nav a:nth-child(even) { color: var(--lime); }
+.sidebar-nav a:nth-child(odd)  { color: #ffffa0; }
+.sidebar-nav a:nth-child(even) { color: #ffb6c1; }
 
 .sidebar-nav a:hover {
   color: var(--yellow);
@@ -370,7 +380,7 @@ body.nav-open .nav-mobile {
 
 /* Marquee text */
 .marquee-wrap {
-  background-color: var(--black);
+  background-color: #d4a8f0;
   border-top: 1px solid var(--magenta);
   border-bottom: 1px solid var(--magenta);
   overflow: hidden;
@@ -440,7 +450,7 @@ body.nav-open .nav-mobile {
 .hit-counter {
   display: inline-flex;
   gap: 2px;
-  background-color: var(--black);
+  background-color: #ff70b7;
   border: 2px solid var(--magenta);
   padding: 3px 6px;
 }
@@ -449,10 +459,10 @@ body.nav-open .nav-mobile {
   font-family: "Courier New", Courier, monospace;
   font-size: 16px;
   font-weight: bold;
-  color: var(--lime);
-  background-color: #001100;
+  color: #00aaff;
+  background-color: #ff70b7;
   padding: 1px 3px;
-  border: 1px solid #004400;
+  border: 1px solid #cc1870;
   min-width: 14px;
   text-align: center;
 }

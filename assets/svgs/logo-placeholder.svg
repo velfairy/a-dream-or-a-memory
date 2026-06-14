@@ -1,41 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" width="220" height="80">
-  <!-- Oval background -->
-  <ellipse cx="110" cy="40" rx="106" ry="37" fill="#000000"/>
-  <!-- Outer border -->
-  <ellipse cx="110" cy="40" rx="106" ry="37" fill="none" stroke="#ff00ff" stroke-width="3"/>
-  <!-- Inner border -->
-  <ellipse cx="110" cy="40" rx="100" ry="31" fill="none" stroke="#ff00ff" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+  <!-- Yellow swoosh arc -->
+  <path d="M 30 90 C 10 40, 60 10, 160 30 C 260 50, 300 80, 280 100" fill="none" stroke="#f5d84e" stroke-width="4" stroke-linecap="round"/>
 
-  <!-- Logo text -->
+  <!-- Line 1: "A dream" in pink -->
   <text
-    x="110" y="33"
-    font-family="Impact, Arial Black, sans-serif"
-    font-size="20"
-    font-style="italic"
+    x="175" y="52"
+    font-family="'Arial Rounded MT Bold', 'Nunito', Arial, sans-serif"
+    font-size="36"
     font-weight="bold"
     text-anchor="middle"
-    fill="#ff00ff"
-    letter-spacing="3"
-  >YOUR NAME</text>
+    fill="#f07a9a"
+    letter-spacing="1"
+  >A dream</text>
 
-  <!-- Hard drop shadow simulation on tagline -->
+  <!-- Line 2: "Or" in blue/purple -->
   <text
-    x="112" y="56"
-    font-family="Impact, Arial Black, sans-serif"
-    font-size="13"
-    font-style="italic"
+    x="105" y="92"
+    font-family="'Arial Rounded MT Bold', 'Nunito', Arial, sans-serif"
+    font-size="36"
+    font-weight="bold"
     text-anchor="middle"
-    fill="#000000"
-  >.com</text>
-  <text
-    x="110" y="54"
-    font-family="Impact, Arial Black, sans-serif"
-    font-size="13"
-    font-style="italic"
-    text-anchor="middle"
-    fill="#00cccc"
-  >.com</text>
+    fill="#8fa8d8"
+    letter-spacing="1"
+  >Or</text>
 
-  <!-- TM badge -->
-  <text x="196" y="20" font-family="Arial, sans-serif" font-size="9" fill="#ffff00">™</text>
+  <!-- Line 2: "a memory" in yellow -->
+  <text
+    x="235" y="92"
+    font-family="'Arial Rounded MT Bold', 'Nunito', Arial, sans-serif"
+    font-size="36"
+    font-weight="bold"
+    text-anchor="middle"
+    fill="#f5d84e"
+    letter-spacing="1"
+  >a memory</text>
 </svg>
