@@ -3,7 +3,8 @@
     "allow": [
       "Bash(mkdir -p /Users/centryfuga4/Documents/prototype-retro-page/v1/.claude)",
       "mcp__Claude_Preview__preview_start",
-      "PowerShell(Copy-Item \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo1.PNG\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo.png\" -Force)"
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo1.PNG\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo.png\" -Force)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo_1234.png\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo.png\" -Force)"
     ]
   }
 }
