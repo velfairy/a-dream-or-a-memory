@@ -280,10 +280,7 @@ body.nav-open .nav-mobile {
 
 .card {
   background-color: var(--teal);
-  border-top: var(--border-bevel-light);
-  border-left: var(--border-bevel-light);
-  border-bottom: var(--border-bevel-dark);
-  border-right: var(--border-bevel-dark);
+  border: 3px solid #a8d8f0;
   padding: 6px;
   flex: 0 0 auto;
 }
