@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — a dream or a memory</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .gallery-card {
+      background-color: #a8d8f0;
+      border: 3px solid #a8d8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 200px;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .gallery-card__title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: #cc1870;
+      text-align: center;
+      padding: 8px 6px;
+      font-style: italic;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.88);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox__img {
+      max-width: 90%;
+      max-height: 90%;
+      display: block;
+      border-radius: 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lightbox__close {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: #ffffff;
+      cursor: pointer;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="site-header__inner">
+
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="A dream or a memory" width="560" height="210">
+          </a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <img src="assets/svgs/menu-header.svg" alt="" class="site-nav__bg" aria-hidden="true">
+          <ul class="site-nav__links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT ME</a></li>
+            <li><a href="gallery.html" class="nav-active">GALLERY</a></li>
+            <li><a href="construction.html">MORE STUFF</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">&#9776; MENU</button>
+
+      </div>
+
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT ME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="construction.html">MORE STUFF</a>
+      </nav>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <span class="marquee-text">
+        &nbsp;&nbsp;&nbsp;★ GALLERY ★ &nbsp;&nbsp;&nbsp;
+        <span class="c-magenta">A DREAM OR A MEMORY</span> &nbsp;&nbsp;&nbsp;
+        ★ CLICK A PICTURE TO ENLARGE ★ &nbsp;&nbsp;&nbsp;
+        <span class="c-lime">7 ARTWORKS!!</span> &nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+
+    <!-- MAIN -->
+    <main class="site-main site-main--full">
+
+      <div class="section-header" style="margin: 20px 0 0;">
+        <img src="assets/images/asset1.1.png" alt="" class="deco-flower">
+        <h1 class="heading-neon heading-neon--md">
+          <span class="c-magenta">Photo</span>
+          <span class="c-yellow">Gallery</span>
+        </h1>
+        <img src="assets/images/asset1.1.png" alt="" class="deco-flower">
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/1.jpeg')">
+          <img src="assets/images/1.jpeg" alt="Artwork 1">
+          <p class="gallery-card__title">Artwork 1</p>
+        </div>
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/2.jpeg')">
+          <img src="assets/images/2.jpeg" alt="Artwork 2">
+          <p class="gallery-card__title">Artwork 2</p>
+        </div>
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/3.jpeg')">
+          <img src="assets/images/3.jpeg" alt="Artwork 3">
+          <p class="gallery-card__title">Artwork 3</p>
+        </div>
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/4.jpeg')">
+          <img src="assets/images/4.jpeg" alt="Artwork 4">
+          <p class="gallery-card__title">Artwork 4</p>
+        </div>
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/5.jpeg')">
+          <img src="assets/images/5.jpeg" alt="Artwork 5">
+          <p class="gallery-card__title">Artwork 5</p>
+        </div>
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/6.jpeg')">
+          <img src="assets/images/6.jpeg" alt="Artwork 6">
+          <p class="gallery-card__title">Artwork 6</p>
+        </div>
+
+        <div class="gallery-card" onclick="openLightbox('assets/images/7.jpeg')">
+          <img src="assets/images/7.jpeg" alt="Artwork 7">
+          <p class="gallery-card__title">Artwork 7</p>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <nav class="site-footer__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="construction.html">Guestbook</a>
+        <a href="construction.html">Links</a>
+      </nav>
+      <p class="site-footer__copy">
+        &copy; 2002 velfairy.com &nbsp;|&nbsp;
+        <a href="construction.html">Privacy Policy</a> &nbsp;/&nbsp;
+        <a href="construction.html">Terms</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox__close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="assets/js/nav.js"></script>
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('lightbox-img').src = '';
+    }
+  </script>
+</body>
+</html>
