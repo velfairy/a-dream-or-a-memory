@@ -318,7 +318,7 @@ body.nav-open .nav-mobile {
 
 /* Content block (text area on a dark card) */
 .content-block {
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.35);
   border: 2px solid var(--magenta);
   padding: 10px 12px;
   margin-bottom: 10px;
