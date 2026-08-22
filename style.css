@@ -124,7 +124,7 @@ ul {
 /* Main content area — optional sidebar layout */
 .site-body {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .site-sidebar {
