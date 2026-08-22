@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music — a dream or a memory</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .music-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 40px;
+    }
+
+    /* ── Winamp shell ── */
+    .winamp {
+      width: 100%;
+      max-width: 560px;
+      background: #1a0a2e;
+      border-top: 3px solid #cc1870;
+      border-left: 3px solid #cc1870;
+      border-right: 3px solid #660038;
+      border-bottom: 3px solid #660038;
+      box-shadow: 4px 4px 0 #000, 0 0 24px #ff70b766;
+      font-family: "Courier New", monospace;
+    }
+
+    /* title bar */
+    .winamp__titlebar {
+      background: linear-gradient(90deg, #cc1870 0%, #ff70b7 50%, #cc1870 100%);
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .winamp__title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 0 #660038;
+    }
+    .winamp__titlebar-dots {
+      display: flex;
+      gap: 4px;
+    }
+    .winamp__titlebar-dots span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffff00;
+      border: 1px solid #888;
+    }
+    .winamp__titlebar-dots span:last-child { background: #ff4444; }
+
+    /* LCD display */
+    .winamp__display {
+      background: #0a1a0a;
+      border: 2px inset #003300;
+      margin: 8px;
+      padding: 8px 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .winamp__lcd-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .winamp__track-name {
+      color: #00ff66;
+      font-size: 13px;
+      font-family: "Courier New", monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 340px;
+      text-shadow: 0 0 6px #00ff66;
+    }
+    .winamp__time {
+      color: #00ff66;
+      font-size: 18px;
+      font-family: "Courier New", monospace;
+      text-shadow: 0 0 8px #00ff66;
+      letter-spacing: 2px;
+      min-width: 60px;
+      text-align: right;
+    }
+    .winamp__status {
+      font-size: 10px;
+      color: #00aa44;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      text-shadow: 0 0 4px #00ff66;
+    }
+
+    /* EQ bars */
+    .winamp__eq {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
+      height: 20px;
+    }
+    .eq-bar {
+      width: 6px;
+      background: #00ff66;
+      box-shadow: 0 0 4px #00ff66;
+      animation: eq-bounce var(--dur) ease-in-out infinite alternate;
+      border-radius: 1px 1px 0 0;
+    }
+    @keyframes eq-bounce {
+      from { height: 4px; }
+      to   { height: var(--max-h); }
+    }
+    .eq-bar:nth-child(1)  { --dur: 0.45s; --max-h: 14px; }
+    .eq-bar:nth-child(2)  { --dur: 0.37s; --max-h: 18px; }
+    .eq-bar:nth-child(3)  { --dur: 0.52s; --max-h: 12px; }
+    .eq-bar:nth-child(4)  { --dur: 0.41s; --max-h: 20px; }
+    .eq-bar:nth-child(5)  { --dur: 0.33s; --max-h: 16px; }
+    .eq-bar:nth-child(6)  { --dur: 0.48s; --max-h: 10px; }
+    .eq-bar:nth-child(7)  { --dur: 0.39s; --max-h: 18px; }
+    .eq-bar:nth-child(8)  { --dur: 0.55s; --max-h: 14px; }
+    .eq-bar:nth-child(9)  { --dur: 0.42s; --max-h: 20px; }
+    .eq-bar:nth-child(10) { --dur: 0.36s; --max-h: 12px; }
+
+    .winamp__eq.paused .eq-bar {
+      animation-play-state: paused;
+    }
+
+    /* YouTube embed */
+    .winamp__video {
+      margin: 0 8px 8px;
+      background: #000;
+      border: 2px inset #003300;
+      position: relative;
+      padding-top: 56.25%;
+    }
+    .winamp__video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Controls */
+    .winamp__controls {
+      display: flex;
+      gap: 4px;
+      padding: 6px 8px 8px;
+      align-items: center;
+      background: #1a0a2e;
+    }
+    .winamp__btn {
+      background: linear-gradient(180deg, #ff9dc8 0%, #cc1870 100%);
+      border-top: 2px solid #ffb6d6;
+      border-left: 2px solid #ffb6d6;
+      border-bottom: 2px solid #880040;
+      border-right: 2px solid #880040;
+      color: #fff;
+      font-size: 14px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-family: "Courier New", monospace;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #660038;
+      min-width: 36px;
+      text-align: center;
+      user-select: none;
+    }
+    .winamp__btn:active {
+      border-top: 2px solid #880040;
+      border-left: 2px solid #880040;
+      border-bottom: 2px solid #ffb6d6;
+      border-right: 2px solid #ffb6d6;
+      transform: translate(1px, 1px);
+    }
+    .winamp__vol-label {
+      color: #ff9dc8;
+      font-size: 10px;
+      margin-left: auto;
+      letter-spacing: 1px;
+    }
+    .winamp__vol {
+      accent-color: #ff70b7;
+      width: 80px;
+    }
+
+    /* Playlist */
+    .winamp__playlist {
+      background: #0d0020;
+      border-top: 2px solid #cc1870;
+      margin: 0 8px 8px;
+      max-height: 220px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #cc1870 #1a0a2e;
+    }
+    .winamp__playlist-header {
+      background: linear-gradient(90deg, #cc1870, #ff70b7, #cc1870);
+      padding: 3px 8px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .playlist-track {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #1a0030;
+      transition: background 0.1s;
+    }
+    .playlist-track:hover {
+      background: #2a0050;
+    }
+    .playlist-track.active {
+      background: #cc1870;
+    }
+    .playlist-track__num {
+      color: #ff70b7;
+      font-size: 10px;
+      min-width: 18px;
+      font-family: "Courier New", monospace;
+    }
+    .playlist-track__name {
+      color: #e0b0d0;
+      font-size: 12px;
+      font-family: "Courier New", monospace;
+    }
+    .playlist-track.active .playlist-track__name {
+      color: #fff;
+    }
+    .playlist-track__playing {
+      color: #00ff66;
+      font-size: 10px;
+      margin-left: auto;
+      display: none;
+    }
+    .playlist-track.active .playlist-track__playing {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="site-header__inner">
+
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="A dream or a memory">
+          </a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <img src="assets/svgs/menu-header.svg" alt="" class="site-nav__bg" aria-hidden="true">
+          <div class="site-nav__links" style="padding:0; background-image:url('assets/images/GGDstarlineanimation1.gif'); background-repeat:repeat-x; background-size:auto 40px; background-position:left center;"></div>
+        </nav>
+
+        <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">&#9776; MENU</button>
+
+      </div>
+
+      <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT ME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="music.html">MUSIC</a>
+      </nav>
+    </header>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <span class="marquee-text">
+        &nbsp;&nbsp;&nbsp;★ MUSIC ROOM ★ &nbsp;&nbsp;&nbsp;
+        <span class="c-magenta">NOW PLAYING!!</span> &nbsp;&nbsp;&nbsp;
+        ★ CLICK A TRACK TO PLAY ★ &nbsp;&nbsp;&nbsp;
+        <span class="c-lime">TURN IT UP!!</span> &nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+
+    <!-- MAIN -->
+    <main class="site-main site-main--full music-main">
+
+      <div class="section-header" style="margin-bottom: 16px;">
+        <img src="assets/images/asset1.1.png" alt="" class="deco-flower">
+        <h1 class="heading-neon heading-neon--md">
+          <span class="c-magenta">Music</span>
+          <span class="c-yellow">Room</span>
+          <span class="c-cyan">!!</span>
+        </h1>
+        <img src="assets/images/asset1.1.png" alt="" class="deco-flower">
+      </div>
+
+      <!-- WINAMP PLAYER -->
+      <div class="winamp">
+
+        <!-- Title bar -->
+        <div class="winamp__titlebar">
+          <span class="winamp__title">★ DREAMPLAYER 2002 ★</span>
+          <div class="winamp__titlebar-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <!-- LCD -->
+        <div class="winamp__display">
+          <div class="winamp__status" id="player-status">■ STOPPED</div>
+          <div class="winamp__lcd-row">
+            <div class="winamp__track-name" id="track-name">-- SELECT A TRACK BELOW --</div>
+            <div class="winamp__time" id="player-time">0:00</div>
+          </div>
+          <div class="winamp__eq paused" id="eq-bars">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+        </div>
+
+        <!-- Video embed -->
+        <div class="winamp__video">
+          <iframe
+            id="yt-iframe"
+            src=""
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Controls -->
+        <div class="winamp__controls">
+          <button class="winamp__btn" onclick="prevTrack()" title="Previous">⏮</button>
+          <button class="winamp__btn" onclick="playTrack()" title="Play">▶</button>
+          <button class="winamp__btn" onclick="pauseTrack()" title="Pause">⏸</button>
+          <button class="winamp__btn" onclick="stopTrack()" title="Stop">■</button>
+          <button class="winamp__btn" onclick="nextTrack()" title="Next">⏭</button>
+          <span class="winamp__vol-label">VOL</span>
+          <input class="winamp__vol" type="range" min="0" max="100" value="80" oninput="setVolume(this.value)" title="Volume">
+        </div>
+
+        <!-- Playlist -->
+        <div class="winamp__playlist">
+          <div class="winamp__playlist-header">PLAYLIST — 10 TRACKS</div>
+          <div id="playlist"></div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <nav class="site-footer__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="music.html">Music</a>
+        <a href="construction.html">Guestbook</a>
+      </nav>
+      <p class="site-footer__copy">
+        &copy; 2002 velfairy.com &nbsp;|&nbsp;
+        <a href="construction.html">Privacy Policy</a> &nbsp;/&nbsp;
+        <a href="construction.html">Terms</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/nav.js"></script>
+  <script>
+    const tracks = [
+      { title: "Type O Negative — Red Water (Christmas Mourning)", id: "SzaflC73iTk" },
+      { title: "Hole — Petals",                                    id: "LpEeqIiCEak" },
+      { title: "Korea Girl — Reunion",                             id: "7Ry9pnqgCJY" },
+      { title: "Radiohead — Go Slowly",                            id: "bD4WBV_skbs" },
+      { title: "Texas Is The Reason — Do You Know Who You Are",    id: "Y8qVpVWXhcU" },
+      { title: "my bloody valentine — sometimes",                  id: "W1GJ9EWLKRA" },
+      { title: "Britney Spears — I Will Still Love You",           id: "9eBYeol6MSg" },
+      { title: "Evanescence — Bleed (I Must Be Dreaming)",         id: "oIPWM2-hqxA" },
+      { title: "Paramore — Stuck On You",                          id: "sBFGnEHJgKE" },
+      { title: "Avril Lavigne — How Does It Feel",                 id: "bkdPrLFKz10" },
+    ];
+
+    let current = -1;
+    let timer = null;
+
+    const iframe   = document.getElementById('yt-iframe');
+    const trackEl  = document.getElementById('track-name');
+    const statusEl = document.getElementById('player-status');
+    const timeEl   = document.getElementById('player-time');
+    const eqEl     = document.getElementById('eq-bars');
+    const playlist = document.getElementById('playlist');
+
+    // Build playlist UI
+    tracks.forEach((t, i) => {
+      const row = document.createElement('div');
+      row.className = 'playlist-track';
+      row.id = 'track-' + i;
+      row.innerHTML = `
+        <span class="playlist-track__num">${String(i+1).padStart(2,'0')}</span>
+        <span class="playlist-track__name">${t.title}</span>
+        <span class="playlist-track__playing">♪ PLAYING</span>
+      `;
+      row.onclick = () => loadTrack(i, true);
+      playlist.appendChild(row);
+    });
+
+    function loadTrack(index, autoplay) {
+      if (index < 0 || index >= tracks.length) return;
+      current = index;
+
+      document.querySelectorAll('.playlist-track').forEach(r => r.classList.remove('active'));
+      document.getElementById('track-' + index).classList.add('active');
+      document.getElementById('track-' + index).scrollIntoView({ block: 'nearest' });
+
+      trackEl.textContent = tracks[index].title;
+
+      const auto = autoplay ? 1 : 0;
+      iframe.src = `https://www.youtube.com/embed/${tracks[index].id}?autoplay=${auto}&rel=0&modestbranding=1&enablejsapi=1`;
+
+      if (autoplay) {
+        setPlaying();
+      } else {
+        setPaused();
+      }
+
+      startTimer();
+    }
+
+    function playTrack() {
+      if (current === -1) { loadTrack(0, true); return; }
+      // reload with autoplay
+      const t = tracks[current];
+      iframe.src = `https://www.youtube.com/embed/${t.id}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1`;
+      setPlaying();
+      startTimer();
+    }
+
+    function pauseTrack() {
+      setPaused();
+    }
+
+    function stopTrack() {
+      iframe.src = '';
+      statusEl.textContent = '■ STOPPED';
+      eqEl.classList.add('paused');
+      timeEl.textContent = '0:00';
+      clearInterval(timer);
+    }
+
+    function nextTrack() {
+      loadTrack((current + 1) % tracks.length, true);
+    }
+
+    function prevTrack() {
+      loadTrack((current - 1 + tracks.length) % tracks.length, true);
+    }
+
+    function setVolume(val) {
+      // Volume is controlled inside YouTube player; we can't set it via iframe src alone
+      // This slider is decorative but functional if user uses YouTube controls too
+    }
+
+    function setPlaying() {
+      statusEl.textContent = '▶ PLAYING';
+      eqEl.classList.remove('paused');
+    }
+
+    function setPaused() {
+      statusEl.textContent = '⏸ PAUSED';
+      eqEl.classList.add('paused');
+      clearInterval(timer);
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      let secs = 0;
+      timer = setInterval(() => {
+        secs++;
+        const m = Math.floor(secs / 60);
+        const s = String(secs % 60).padStart(2, '0');
+        timeEl.textContent = m + ':' + s;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
