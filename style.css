@@ -298,6 +298,7 @@ body.nav-open .nav-mobile {
   display: block;
   object-fit: cover;
   border: 1px solid var(--black);
+  border-radius: 12px;
 }
 
 .card__label {
