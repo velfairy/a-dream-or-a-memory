@@ -162,11 +162,13 @@ ul {
   padding: 6px 10px;
   border-right: var(--border-neon);
   flex-shrink: 0;
+  width: 320px;
+  min-width: 320px;
 }
 
 .site-logo img,
 .site-logo svg {
-  width: 180px;
+  width: 100%;
   height: auto;
   display: block;
 }
