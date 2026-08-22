@@ -344,7 +344,7 @@ body.nav-open .nav-mobile {
 .c-magenta { color: #ff9dc8; }
 .c-lime    { color: #b8f0b8; }
 .c-cyan    { color: #a8e8f0; }
-.c-yellow  { color: #fff0a0; }
+.c-yellow  { color: #b8860b; }
 .c-hotpink { color: #ffb3d9; }
 .c-orange  { color: var(--orange); }
 .c-white   { color: var(--white); }
@@ -353,7 +353,7 @@ body.nav-open .nav-mobile {
 .body-text {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--white);
+  color: #7a3060;
   line-height: 1.5;
 }
 
