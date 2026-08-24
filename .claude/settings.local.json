@@ -4,7 +4,11 @@
       "Bash(mkdir -p /Users/centryfuga4/Documents/prototype-retro-page/v1/.claude)",
       "mcp__Claude_Preview__preview_start",
       "PowerShell(Copy-Item \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo1.PNG\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo.png\" -Force)",
-      "PowerShell(Copy-Item \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo_1234.png\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo.png\" -Force)"
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo_1234.png\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\assets\\\\images\\\\logo.png\" -Force)",
+      "PowerShell(cd \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\"; \\(Get-Content index.html\\) -replace 'href=\"construction.html\">Links', 'href=\"music.html\">Music' | Set-Content index.html -Encoding utf8)",
+      "PowerShell(& \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\.claude\\\\server.js\")",
+      "PowerShell(cd \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\"; $c = Get-Content index.html -Raw -Encoding utf8; $smart = \\([regex]::Matches\\($c, [char]0x201C + '|' + [char]0x201D\\)\\).Count; Write-Output \"Smart quote count: $smart\")",
+      "PowerShell(cd \"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\"; $c = [System.IO.File]::ReadAllText\\(\"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\index.html\"\\); $bad = [string]\\([char]0x00E2\\) + [string]\\([char]0x2026\\); $star = [string][char]0x2605; $c = $c.Replace\\($bad, $star\\); [System.IO.File]::WriteAllText\\(\"C:\\\\Users\\\\julia\\\\Documents\\\\code\\\\y2k_website\\\\index.html\", $c, \\(New-Object System.Text.UTF8Encoding $false\\)\\); Select-String -Path index.html -Pattern \\([char]0x2605\\) | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line.Trim\\(\\)\\)\" })"
     ]
   }
 }

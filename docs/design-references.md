@@ -49,8 +49,9 @@ text-shadow: 0 0 8px #ff00ff;
 
 Exception: a single very subtle `text-shadow: 1px 1px 0 #000` (hard offset, no blur) is period-accurate — it mimics the Photoshop drop shadow burned into image-text. No blur radius.
 
-### Typography — system fonts, image-text simulation
-- Body/nav text: `font-family: Impact, "Arial Black", Arial, sans-serif`
+### Typography — display font + system fallback
+- Display/heading text: `font-family: "Zenfix", Impact, "Arial Black", Arial, sans-serif` — a custom web font (`assets/fonts/Zenfix-Demo.ttf`, loaded via `@font-face`) approved 2026-08-24 as the site's signature display face. It reads as a bold, blocky display font in the same spirit as Impact, so it doesn't break the era-authentic feel; the system stack still applies as fallback if the font fails to load.
+- Body text: `font-family: Arial, Helvetica, sans-serif`
 - For section headers that need the "image-text" look: create actual GIF-style PNGs in the assets pipeline, OR use SVG text with **no filters** — just flat fill color + hard 1px stroke, no glow
 - Mixed color text (each word different color): done via `<span>` with inline color, not gradients
 
@@ -163,5 +164,5 @@ Comic Sans is period-accurate for informal/fun sections but use sparingly.
 | `transition` / `ease` | Instant state change or `steps()` |
 | Large `gap` whitespace | Packed, dense layouts |
 | `object-fit: cover` smooth scaling | Fixed pixel sizes, pixelated rendering |
-| Web fonts (Google Fonts) | System fonts only |
+| Google Fonts / hosted font services | Self-hosted display font (Zenfix) or system fonts |
 | Smooth scroll | None, or anchor jump |

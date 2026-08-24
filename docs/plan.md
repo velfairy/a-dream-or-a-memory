@@ -2,7 +2,7 @@
 
 > Ordered list of actions to reach the goal. Each step should be small enough to complete in one sitting. Update status as work progresses. When a step is done, mark it and update `current-state.md` and `action-log.md`.
 
-**Last updated:** 2026-06-14
+**Last updated:** 2026-08-24
 
 ---
 
@@ -10,10 +10,10 @@
 
 All decorative and structural SVG files. These must exist before HTML is written so they can be referenced correctly.
 
-- [x] **1.1** Create `assets/svgs/logo-placeholder.svg`
+- [x] **1.1** Create `assets/svgs/logo-placeholder.svg` *(superseded — no longer referenced, see Phase 8)*
 - [x] **1.2** Create `assets/svgs/menu-header.svg`
-- [x] **1.3** Create `assets/svgs/flower-neon.svg`
-- [x] **1.4** Create `assets/svgs/starburst.svg`
+- [x] **1.3** Create `assets/svgs/flower-neon.svg` *(superseded — no longer referenced, see Phase 8)*
+- [x] **1.4** Create `assets/svgs/starburst.svg` *(superseded — no longer referenced, see Phase 8)*
 - [x] **1.5** Create `assets/svgs/divider.svg`
 
 ---
@@ -31,6 +31,9 @@ All decorative and structural SVG files. These must exist before HTML is written
 - [x] **2.7** Decorative element styles (flower/starburst sizing, divider, caution stripe, blink, hit counter, badge)
 - [x] **2.8** Footer styles
 - [x] **2.9** Responsive breakpoint (768px): mobile layout, hide desktop nav, show hamburger
+- [x] **2.10** *(added 2026-08-22, undocumented at the time)* Custom `Zenfix` display font via `@font-face` — see Phase 8.3, conflicts with `design-references.md`
+- [x] **2.11** *(added 2026-08-24)* Shared `.lightbox` styles (moved out of gallery.html's page-local `<style>` block so about.html could reuse it)
+- [x] **2.12** *(added 2026-08-24)* `.card-grid--fill` modifier for evenly-filled card rows
 
 ---
 
@@ -58,8 +61,27 @@ All decorative and structural SVG files. These must exist before HTML is written
 
 ---
 
+## Phase 6 — Gallery Page *(done 2026-08-22, undocumented until 2026-08-24)*
+
+- [x] **6.1** Create `gallery.html` — photo grid + click-to-enlarge lightbox, 7 artworks
+
+---
+
+## Phase 7 — Music Page *(done 2026-08-22, not originally planned; added retroactively)*
+
+- [x] **7.1** Create `music.html` — YouTube playlist embed page
+
+---
+
+## Phase 8 — Cleanup & Open Decisions *(new, 2026-08-24)*
+
+- [ ] **8.1** Replace remaining `placeholder-kitten.jpg` uses in `about.html` "More Photos" section (4 cards) with real photos
+- [ ] **8.2** Decide fate of orphaned assets: `logo-placeholder.svg`, `flower-neon.svg`, `starburst.svg`, `logo1.PNG`, `logo2.png`, `logo_1234.png`, `asset1.PNG`, `asset2.PNG` — none are referenced by any page anymore
+- [x] **8.3** Resolve the Zenfix custom font vs. `design-references.md`'s "system fonts only" rule — user approved keeping it 2026-08-24; `design-references.md` amended to allow a self-hosted display font
+- [ ] **8.4** Bring `directory-structure.md` and `asset-catalog.md` current (in progress alongside this plan update)
+
+---
+
 ## Future Phases (not planned in detail yet)
 
-- **Phase 6** — `gallery.html` with real PNG photos
-- **Phase 7** — Additional pages as needed
-- **Phase 8** — Replace placeholder SVGs with final designed assets
+- **Phase 9** — Additional pages as needed (e.g. Guestbook, Downloads, Privacy Policy, Terms — all currently link to `construction.html`)

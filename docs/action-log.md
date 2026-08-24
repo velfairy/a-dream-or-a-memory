@@ -59,3 +59,32 @@ Chronological record of all build steps. Updated as work is completed.
   - `assets/svgs/flower-neon.svg`
   - `assets/svgs/starburst.svg`
   - `assets/svgs/divider.svg`
+
+---
+
+## 2026-08-22 — Session (undocumented) — Major expansion, not logged at the time
+
+> **Note added retroactively on 2026-08-24:** 38 commits landed on this date without corresponding action-log/current-state/plan/asset-catalog updates, in violation of this project's own doc-update rules. Reconstructed here from `git log` only — no session narrative is available, just what shipped:
+
+- [x] Replaced placeholder logo with final "a dream or a memory" logo (`logo.png`), after several intermediate iterations (`logo1.PNG`, `logo2.png`, `logo_1234.png` — left in `assets/images/` unused)
+- [x] Redesigned colors, fonts, and assets; added custom `Zenfix-Demo.ttf` display font via `@font-face` — **this conflicts with `design-references.md`'s explicit "system fonts only, no web fonts" rule** and has not been reconciled
+- [x] Added real photos (`1.jpeg`–`7.jpeg`, `33.jpeg`, `55.jpeg`) replacing some kitten placeholders; swapped 1.jpeg/2.jpeg → 33.jpeg/55.jpeg on the homepage
+- [x] Added `gallery.html` — lightbox-enabled photo grid, 7 artworks (page-local `<style>` block, not in shared `style.css`)
+- [x] Added `music.html` — YouTube playlist player page (not in `directory-structure.md`, `plan.md`, or `goal.md`)
+- [x] Replaced nav buttons with a tiled star-gif background (`GGDstarlineanimation1.gif`) across the nav bar on all pages
+- [x] Added `underconstruction.gif` to `construction.html`
+- [x] Various layout/color fixes: sidebar full-height stretch, card rounded corners + baby-blue frames, darkened body text and update dates for legibility, removed dot row from nav header, fixed sidebar/footer Gallery links
+- [x] Fixed an encoding-corruption incident where smart quotes broke CSS class names in `index.html`; repaired via direct byte replacement
+- [ ] `docs/plan.md` and `docs/asset-catalog.md` still do not reflect any of the above — carried forward as open work
+
+---
+
+## 2026-08-24 — Session 2 — Featured Pics layout fix & About Me content pass
+
+- [x] Fixed `index.html` "Featured Pics!!" card grid: 4 cards were fixed-width and wrapping unevenly inside the main column, leaving dead space. Added a `.card-grid--fill` modifier (CSS Grid, `repeat(4, 1fr)`, 2 columns under 768px) in `style.css` and applied it only to that section — other `.card-grid` usages (about.html) untouched.
+- [x] `about.html`: changed page heading "All About Us!!" → "All About Me!!" (text only, same spans/classes/colors)
+- [x] `about.html`: replaced profile photo placeholder (`placeholder-kitten.jpg`) with `assets/images/me1.jpeg`; made it clickable to open a fullscreen lightbox
+- [x] Moved the lightbox CSS (previously a page-local `<style>` block duplicated only in `gallery.html`) into the shared `style.css` so it can be reused across pages without violating the single-stylesheet rule; added the lightbox markup/script to `about.html` following the same pattern as `gallery.html`
+- [x] `about.html` Quick Facts table: changed label color from `#ffff00` to `#b8860b` (dark goldenrod) for legibility against the translucent `.content-block` background — same warm-yellow already used for homepage update dates. Filled in real values: Name (Julia), Age (24), Location (Warsaw), Sign (Leo Sun, Virgo Moon, Libra Rising); Mood and Status left unchanged.
+- [x] Rewrote `docs/current-state.md` from scratch to match actual repo state (see that file for full detail)
+- [ ] **Carried over — not done this session:** `docs/plan.md` and `docs/asset-catalog.md` still need the same catch-up pass. See `current-state.md` "Known Issues" for the full list.
