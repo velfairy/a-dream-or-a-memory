@@ -104,16 +104,16 @@
 
         <div class="card-grid card-grid--fill">
           <div class="card card--medium">
-            <img src="assets/images/33.jpeg" alt="" class="card__img" width="200" height="150">
+            <img src="assets/images/33.jpeg" alt="" class="card__img" width="200" height="150" style="cursor:pointer;" onclick="openLightbox('assets/images/33.jpeg')">
           </div>
           <div class="card card--medium">
-            <img src="assets/images/55.jpeg" alt="" class="card__img" width="200" height="150">
+            <img src="assets/images/55.jpeg" alt="" class="card__img" width="200" height="150" style="cursor:pointer;" onclick="openLightbox('assets/images/55.jpeg')">
           </div>
           <div class="card card--medium">
-            <img src="assets/images/3.jpeg" alt="" class="card__img" width="200" height="150">
+            <img src="assets/images/3.jpeg" alt="" class="card__img" width="200" height="150" style="cursor:pointer;" onclick="openLightbox('assets/images/3.jpeg')">
           </div>
           <div class="card card--medium">
-            <img src="assets/images/4.jpeg" alt="" class="card__img" width="200" height="150">
+            <img src="assets/images/4.jpeg" alt="" class="card__img" width="200" height="150" style="cursor:pointer;" onclick="openLightbox('assets/images/4.jpeg')">
           </div>
         </div>
 
@@ -168,6 +168,22 @@
 
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox__close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+  </div>
+
   <script src="assets/js/nav.js"></script>
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('lightbox-img').src = '';
+    }
+  </script>
 </body>
 </html>
