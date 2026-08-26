@@ -87,4 +87,16 @@ Chronological record of all build steps. Updated as work is completed.
 - [x] Moved the lightbox CSS (previously a page-local `<style>` block duplicated only in `gallery.html`) into the shared `style.css` so it can be reused across pages without violating the single-stylesheet rule; added the lightbox markup/script to `about.html` following the same pattern as `gallery.html`
 - [x] `about.html` Quick Facts table: changed label color from `#ffff00` to `#b8860b` (dark goldenrod) for legibility against the translucent `.content-block` background — same warm-yellow already used for homepage update dates. Filled in real values: Name (Julia), Age (24), Location (Warsaw), Sign (Leo Sun, Virgo Moon, Libra Rising); Mood and Status left unchanged.
 - [x] Rewrote `docs/current-state.md` from scratch to match actual repo state (see that file for full detail)
-- [ ] **Carried over — not done this session:** `docs/plan.md` and `docs/asset-catalog.md` still need the same catch-up pass. See `current-state.md` "Known Issues" for the full list.
+- [x] Caught up `docs/plan.md`, `docs/directory-structure.md`, and `docs/asset-catalog.md` to match actual repo state
+- [x] Resolved the Zenfix font decision — user chose to keep it; amended `design-references.md` to allow a self-hosted display font
+- [x] Committed and pushed to `origin/main` as [`35d2e02`](https://github.com/velfairy/a-dream-or-a-memory.git) — About Me overhaul, homepage grid fix, doc catch-up
+
+---
+
+## 2026-08-24 — Session 3 — Featured Pics lightbox, gallery renaming, session handoff
+
+- [x] `index.html`: homepage Featured Pics (all 4 images) now open the shared lightbox on click, same as gallery.html
+- [x] `gallery.html`: heading changed "Photo Gallery" → "Artwork Gallery"; all 7 artworks recaptioned with real titles + medium (were placeholder "Artwork N" labels) — colors/font untouched
+- [x] Committed and pushed to `origin/main` as [`3e5cd22`](https://github.com/velfairy/a-dream-or-a-memory.git)
+- [x] Updated `plan.md`, `current-state.md`, `asset-catalog.md` to reflect the above
+- [ ] **Handoff for next session:** user is starting a new conversation to add a new feature/page. Nothing is mid-flight or blocking — see `current-state.md` "Ready for Next Steps" for the standing backlog (kitten placeholders in About "More Photos", two unused real photos `me2.jpeg`/`misty.jpeg` sitting in `assets/images/`, orphaned asset cleanup).

@@ -78,7 +78,9 @@ All decorative and structural SVG files. These must exist before HTML is written
 - [ ] **8.1** Replace remaining `placeholder-kitten.jpg` uses in `about.html` "More Photos" section (4 cards) with real photos
 - [ ] **8.2** Decide fate of orphaned assets: `logo-placeholder.svg`, `flower-neon.svg`, `starburst.svg`, `logo1.PNG`, `logo2.png`, `logo_1234.png`, `asset1.PNG`, `asset2.PNG` — none are referenced by any page anymore
 - [x] **8.3** Resolve the Zenfix custom font vs. `design-references.md`'s "system fonts only" rule — user approved keeping it 2026-08-24; `design-references.md` amended to allow a self-hosted display font
-- [ ] **8.4** Bring `directory-structure.md` and `asset-catalog.md` current (in progress alongside this plan update)
+- [x] **8.4** Bring `directory-structure.md` and `asset-catalog.md` current
+- [x] **8.5** *(added 2026-08-24)* Homepage Featured Pics made click-to-enlarge via the shared lightbox
+- [x] **8.6** *(added 2026-08-24)* `gallery.html` heading renamed "Photo Gallery" → "Artwork Gallery"; all 7 artworks captioned with real titles + medium instead of placeholder "Artwork N"
 
 ---
 

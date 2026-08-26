@@ -11,17 +11,19 @@
 | `assets/images/logo2.png` | Logo | ❌ Orphaned | — | Intermediate iteration, not referenced |
 | `assets/images/logo_1234.png` | Logo | ❌ Orphaned | — | Intermediate iteration, not referenced |
 | `assets/images/me1.jpeg` | Photo | ✅ Done | about.html (profile card, click-to-enlarge) | Real photo |
+| `assets/images/me2.jpeg` | Photo | ⏳ Unused | — | Real photo, committed 2026-08-24, not yet placed on any page |
+| `assets/images/misty.jpeg` | Photo | ⏳ Unused | — | Real photo, committed 2026-08-24, not yet placed on any page |
 | `assets/images/asset1.1.png` | Decoration | ✅ Done | index.html, about.html, gallery.html, construction.html, music.html | Used as `.deco-flower` |
 | `assets/images/asset2.1.png` | Decoration | ✅ Done | index.html, about.html, gallery.html, construction.html, music.html | Used as `.deco-starburst` |
 | `assets/images/asset1.PNG` | Decoration | ❌ Orphaned | — | Superseded by `asset1.1.png` |
 | `assets/images/asset2.PNG` | Decoration | ❌ Orphaned | — | Superseded by `asset2.1.png` |
-| `assets/images/33.jpeg` | Photo | ✅ Done | index.html (Featured Pics), gallery.html (Artwork 1) | Real photo |
-| `assets/images/55.jpeg` | Photo | ✅ Done | index.html (Featured Pics), gallery.html (Artwork 2) | Real photo |
-| `assets/images/3.jpeg` | Photo | ✅ Done | index.html (Featured Pics), gallery.html (Artwork 3) | Real photo |
-| `assets/images/4.jpeg` | Photo | ✅ Done | index.html (Featured Pics), gallery.html (Artwork 4) | Real photo |
-| `assets/images/5.jpeg` | Photo | ✅ Done | gallery.html (Artwork 5) | Real photo |
-| `assets/images/6.jpeg` | Photo | ✅ Done | gallery.html (Artwork 6) | Real photo |
-| `assets/images/7.jpeg` | Photo | ✅ Done | gallery.html (Artwork 7) | Real photo |
+| `assets/images/33.jpeg` | Photo | ✅ Done | index.html (Featured Pics, click-to-enlarge), gallery.html ("In her room", acrylics) | Real photo |
+| `assets/images/55.jpeg` | Photo | ✅ Done | index.html (Featured Pics, click-to-enlarge), gallery.html ("Still life 2k", acrylics) | Real photo |
+| `assets/images/3.jpeg` | Photo | ✅ Done | index.html (Featured Pics, click-to-enlarge), gallery.html ("The carnival", acrylics) | Real photo |
+| `assets/images/4.jpeg` | Photo | ✅ Done | index.html (Featured Pics, click-to-enlarge), gallery.html ("I can see you", acrylics, oils) | Real photo |
+| `assets/images/5.jpeg` | Photo | ✅ Done | gallery.html ("Who are you now?", acrylics) | Real photo |
+| `assets/images/6.jpeg` | Photo | ✅ Done | gallery.html ("Lava lamps", acrylics) | Real photo |
+| `assets/images/7.jpeg` | Photo | ✅ Done | gallery.html ("Little self portrait", acrylics) | Real photo |
 | `assets/images/1.jpeg` | Photo | ❌ Orphaned | — | Superseded by `33.jpeg` on the homepage |
 | `assets/images/2.jpeg` | Photo | ❌ Orphaned | — | Superseded by `55.jpeg` on the homepage |
 | `assets/images/underconstruction.gif` | Decoration | ✅ Done | construction.html | Animated GIF worker |

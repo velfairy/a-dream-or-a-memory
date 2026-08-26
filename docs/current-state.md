@@ -24,10 +24,10 @@
 - [x] `docs/design-references.md` — color palette, typography rules, layout principles (see conflict below)
 
 ### Pages
-- [x] `index.html` — home, sidebar, marquee, "Featured Pics!!" grid (now fills full width evenly), "Latest Updates", hit counter
-- [x] `about.html` — profile card (real photo `me1.jpeg`, click-to-enlarge lightbox), Quick Facts (real data, legible label color), Faves, More Photos (still kitten placeholders)
+- [x] `index.html` — home, sidebar, marquee, "Featured Pics!!" grid (fills full width evenly, all 4 images click-to-enlarge via the shared lightbox), "Latest Updates", hit counter
+- [x] `about.html` — profile card (real photo `me1.jpeg`, click-to-enlarge lightbox), Quick Facts (real data, legible label color), Faves (milky card backgrounds, real music/movies/hobbies), More Photos (still kitten placeholders)
 - [x] `construction.html` — CSS worker animation, caution stripes, blink text, `underconstruction.gif`
-- [x] `gallery.html` — lightbox photo grid, 7 artworks (has its own page-local `<style>` block — pre-existing exception to the single-stylesheet rule)
+- [x] `gallery.html` — heading "Artwork Gallery" (renamed from "Photo Gallery"), lightbox grid with all 7 artworks captioned with real titles + medium (has its own page-local `<style>` block — pre-existing exception to the single-stylesheet rule)
 - [x] `music.html` — YouTube playlist player (not in any planning doc)
 
 ### Code
@@ -44,6 +44,7 @@
 ### Assets — Images (`assets/images/`)
 - [x] `logo.png` — current site logo, in use
 - [x] `me1.jpeg` — profile photo, in use (about.html)
+- [ ] `me2.jpeg`, `misty.jpeg` — real photos added 2026-08-24, committed but **not yet placed on any page**
 - [x] `asset1.1.png`, `asset2.1.png` — current decorative flower/starburst images, in use everywhere
 - [x] `33.jpeg`, `55.jpeg`, `3.jpeg`, `4.jpeg` — homepage Featured Pics, in use
 - [x] `1.jpeg`–`7.jpeg`, `33.jpeg`, `55.jpeg` — gallery.html's 7 artworks (some overlap with homepage)
@@ -76,6 +77,7 @@
 
 ## Ready for Next Steps
 
-- Replace remaining `placeholder-kitten.jpg` uses in about.html "More Photos"
+- Replace remaining `placeholder-kitten.jpg` uses in about.html "More Photos" — `me2.jpeg` and `misty.jpeg` are already sitting in `assets/images/` unused and are likely candidates
 - Decide whether to delete orphaned SVG/PNG assets
 - Add `gallery.html` and `music.html` to `directory-structure.md` and `goal.md`'s page table
+- **Next session starts here:** user has a new feature/page to add — no other open work blocks it
