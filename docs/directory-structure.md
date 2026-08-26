@@ -1,6 +1,6 @@
 # Directory Structure
 
-**Last updated:** 2026-08-24 — rewritten to match actual repo state (was stale since 2026-06-14; did not include gallery.html, music.html, assets/fonts/, or most current images).
+**Last updated:** 2026-08-26 — added `project-info.html`; catalogued the four About "More Photos" images and `pjatk.png`; `placeholder-kitten.jpg` is now orphaned.
 
 ## Actual Layout
 
@@ -21,6 +21,9 @@ y2k_website/
 │   │   ├── logo1.PNG, logo2.png,
 │   │   │   logo_1234.png                  # orphaned logo iterations — not referenced
 │   │   ├── me1.jpeg                       # profile photo (about.html)
+│   │   ├── britbrit.jpg, buffy.jpg,
+│   │   │   aali.jpg, courtney.jpg         # about.html "More Photos" (replaced kitten placeholders)
+│   │   ├── pjatk.png                      # side photo (project-info.html)
 │   │   ├── asset1.1.png, asset2.1.png     # current decorative flower/starburst images
 │   │   ├── asset1.PNG, asset2.PNG         # orphaned — superseded by the .1.png versions
 │   │   ├── 3.jpeg – 7.jpeg, 33.jpeg,
@@ -28,7 +31,7 @@ y2k_website/
 │   │   ├── 1.jpeg, 2.jpeg                 # orphaned — superseded by 33.jpeg/55.jpeg, not referenced
 │   │   ├── underconstruction.gif          # construction.html
 │   │   ├── GGDstarlineanimation1.gif      # tiled nav-bar background, all pages
-│   │   └── placeholder-kitten.jpg         # still used in about.html "More Photos" (4x)
+│   │   └── placeholder-kitten.jpg         # orphaned — no longer referenced by any page
 │   ├── svgs/                      # Vector assets
 │   │   ├── menu-header.svg                # in use — top nav banner graphic
 │   │   ├── divider.svg                    # in use — section dividers
@@ -49,6 +52,7 @@ y2k_website/
 ├── style.css                      # Single shared stylesheet (all pages)
 ├── index.html                     # Home page
 ├── about.html                     # About Me page
+├── project-info.html              # Project Info — diploma statement + supervisor credits
 ├── construction.html              # "Under Construction" — all unbuilt routes link here
 ├── gallery.html                   # Photo gallery with lightbox (has its own small page-local <style> block)
 └── music.html                     # YouTube playlist page

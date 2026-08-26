@@ -100,3 +100,21 @@ Chronological record of all build steps. Updated as work is completed.
 - [x] Committed and pushed to `origin/main` as [`3e5cd22`](https://github.com/velfairy/a-dream-or-a-memory.git)
 - [x] Updated `plan.md`, `current-state.md`, `asset-catalog.md` to reflect the above
 - [ ] **Handoff for next session:** user is starting a new conversation to add a new feature/page. Nothing is mid-flight or blocking — see `current-state.md` "Ready for Next Steps" for the standing backlog (kitten placeholders in About "More Photos", two unused real photos `me2.jpeg`/`misty.jpeg` sitting in `assets/images/`, orphaned asset cleanup).
+
+---
+
+## 2026-08-26 — Session 4 — About "More Photos" real images & new Project Info page
+
+- [x] `about.html` "More Photos": replaced all 4 `placeholder-kitten.jpg` cards with real images — `britbrit.jpg` ("hehe"), `buffy.jpg` ("so fun!!"), `aali.jpg` ("luv this"), `courtney.jpg` ("omg!!"); generic `alt="photo"` replaced with per-image alt text. Card labels and colors untouched. `placeholder-kitten.jpg` is now referenced by no page (Phase 8.1 done).
+- [x] Noted that `me2.jpeg` and `misty.jpeg` — listed as unused-but-available at session start — are no longer in `assets/images/`; the four new images appeared in their place. Recorded as removed from the repo; catalog rows replaced.
+- [x] Created `project-info.html` — new "Project Info" page, built from the `about.html` skeleton so header/marquee/sidebar/footer/lightbox all match:
+  - `<h1>` "My Diploma" using existing `c-cyan` / `c-hotpink` classes
+  - Side photo card with `pjatk.png`, click-to-enlarge via the shared lightbox
+  - Diploma statement paragraph in a standard `.content-block .body-text`
+  - Supervisor credits (main / technical / theoretical) in the same table style as about.html's Quick Facts
+  - Only existing color classes and inline colors already in use elsewhere — no new colors introduced
+- [x] `pjatk.png` given inline `object-fit: contain` + white backing: the card's default `object-fit: cover` was cropping the top and bottom off the circular PJATK emblem
+- [x] Added "Project Info" to every nav on every page — mobile nav, sidebar nav, footer nav — positioned between About Me and Gallery (11 links across 5 existing pages, verified by parse: index 3, about/gallery/music/construction 2 each)
+- [x] Verified via the running dev server: all pages return 200, all images load with real dimensions, no horizontal overflow, stylesheet and Zenfix font applied
+- [x] Updated `directory-structure.md`, `asset-catalog.md`, `plan.md` (Phase 8.1 closed, new Phase 9), and `current-state.md`
+- [ ] **Not done / open:** `construction.html`'s mobile nav still points GALLERY at `construction.html` instead of `gallery.html` (pre-existing, unrelated to this session). Orphaned-asset cleanup (Phase 8.2) still undecided, now including `placeholder-kitten.jpg`. `goal.md`'s page table still omits `music.html` and `project-info.html`.

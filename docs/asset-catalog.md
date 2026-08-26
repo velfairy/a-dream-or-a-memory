@@ -1,6 +1,6 @@
 # Asset Catalog
 
-**Last updated:** 2026-08-24 — rewritten to match actual repo state (was stale since 2026-06-14; only listed the original kitten placeholder + 5 original SVGs).
+**Last updated:** 2026-08-26 — added the four About "More Photos" images and `pjatk.png`; `me2.jpeg`/`misty.jpeg` removed from the repo; `placeholder-kitten.jpg` is now orphaned.
 
 ## Images (Raster)
 
@@ -11,8 +11,11 @@
 | `assets/images/logo2.png` | Logo | ❌ Orphaned | — | Intermediate iteration, not referenced |
 | `assets/images/logo_1234.png` | Logo | ❌ Orphaned | — | Intermediate iteration, not referenced |
 | `assets/images/me1.jpeg` | Photo | ✅ Done | about.html (profile card, click-to-enlarge) | Real photo |
-| `assets/images/me2.jpeg` | Photo | ⏳ Unused | — | Real photo, committed 2026-08-24, not yet placed on any page |
-| `assets/images/misty.jpeg` | Photo | ⏳ Unused | — | Real photo, committed 2026-08-24, not yet placed on any page |
+| `assets/images/britbrit.jpg` | Photo | ✅ Done | about.html ("More Photos", card 1 — label "hehe") | Replaced a kitten placeholder 2026-08-26; portrait, center-cropped by `object-fit: cover` |
+| `assets/images/buffy.jpg` | Photo | ✅ Done | about.html ("More Photos", card 2 — label "so fun!!") | Replaced a kitten placeholder 2026-08-26; portrait, center-cropped |
+| `assets/images/aali.jpg` | Photo | ✅ Done | about.html ("More Photos", card 3 — label "luv this") | Replaced a kitten placeholder 2026-08-26; portrait, center-cropped |
+| `assets/images/courtney.jpg` | Photo | ✅ Done | about.html ("More Photos", card 4 — label "omg!!") | Replaced a kitten placeholder 2026-08-26; portrait, center-cropped |
+| `assets/images/pjatk.png` | Logo | ✅ Done | project-info.html (side photo card, click-to-enlarge) | PJATK university emblem, 554×554; given inline `height:auto` + `aspect-ratio:1/1` (plus `object-fit:contain` and white backing) so the square emblem renders at its true ratio, uncropped, instead of the card default 183×150 `cover` letterbox. Image renders 182×182; card is 200×221 because the "PJATK" caption adds 21px — caption kept deliberately for consistency with every other card on the site. |
 | `assets/images/asset1.1.png` | Decoration | ✅ Done | index.html, about.html, gallery.html, construction.html, music.html | Used as `.deco-flower` |
 | `assets/images/asset2.1.png` | Decoration | ✅ Done | index.html, about.html, gallery.html, construction.html, music.html | Used as `.deco-starburst` |
 | `assets/images/asset1.PNG` | Decoration | ❌ Orphaned | — | Superseded by `asset1.1.png` |
@@ -28,7 +31,7 @@
 | `assets/images/2.jpeg` | Photo | ❌ Orphaned | — | Superseded by `55.jpeg` on the homepage |
 | `assets/images/underconstruction.gif` | Decoration | ✅ Done | construction.html | Animated GIF worker |
 | `assets/images/GGDstarlineanimation1.gif` | Decoration | ✅ Done | All pages (nav bar background, tiled) | Replaces original nav button styling |
-| `assets/images/placeholder-kitten.jpg` | Photo | 🔄 Placeholder | about.html ("More Photos" section, 4x) | From cataas.com, 400×300 — only remaining placeholder use, needs real photos |
+| `assets/images/placeholder-kitten.jpg` | Photo | ❌ Orphaned | — | From cataas.com, 400×300 — last uses replaced 2026-08-26; no page references it now |
 
 ---
 

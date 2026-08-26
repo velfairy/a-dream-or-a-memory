@@ -2,7 +2,7 @@
 
 > Ordered list of actions to reach the goal. Each step should be small enough to complete in one sitting. Update status as work progresses. When a step is done, mark it and update `current-state.md` and `action-log.md`.
 
-**Last updated:** 2026-08-24
+**Last updated:** 2026-08-26
 
 ---
 
@@ -75,8 +75,8 @@ All decorative and structural SVG files. These must exist before HTML is written
 
 ## Phase 8 — Cleanup & Open Decisions *(new, 2026-08-24)*
 
-- [ ] **8.1** Replace remaining `placeholder-kitten.jpg` uses in `about.html` "More Photos" section (4 cards) with real photos
-- [ ] **8.2** Decide fate of orphaned assets: `logo-placeholder.svg`, `flower-neon.svg`, `starburst.svg`, `logo1.PNG`, `logo2.png`, `logo_1234.png`, `asset1.PNG`, `asset2.PNG` — none are referenced by any page anymore
+- [x] **8.1** Replace remaining `placeholder-kitten.jpg` uses in `about.html` "More Photos" section (4 cards) with real photos — done 2026-08-26 with `britbrit.jpg`, `buffy.jpg`, `aali.jpg`, `courtney.jpg`
+- [ ] **8.2** Decide fate of orphaned assets: `logo-placeholder.svg`, `flower-neon.svg`, `starburst.svg`, `logo1.PNG`, `logo2.png`, `logo_1234.png`, `asset1.PNG`, `asset2.PNG`, and now `placeholder-kitten.jpg` — none are referenced by any page anymore
 - [x] **8.3** Resolve the Zenfix custom font vs. `design-references.md`'s "system fonts only" rule — user approved keeping it 2026-08-24; `design-references.md` amended to allow a self-hosted display font
 - [x] **8.4** Bring `directory-structure.md` and `asset-catalog.md` current
 - [x] **8.5** *(added 2026-08-24)* Homepage Featured Pics made click-to-enlarge via the shared lightbox
@@ -84,6 +84,13 @@ All decorative and structural SVG files. These must exist before HTML is written
 
 ---
 
+## Phase 9 — Project Info Page *(new, 2026-08-26)*
+
+- [x] **9.1** Create `project-info.html` — "My Diploma" statement + supervisor credits, `pjatk.png` as the side photo, shared lightbox
+- [x] **9.2** Add "Project Info" to every nav (mobile, sidebar, footer) on all pages, positioned between About Me and Gallery
+
+---
+
 ## Future Phases (not planned in detail yet)
 
-- **Phase 9** — Additional pages as needed (e.g. Guestbook, Downloads, Privacy Policy, Terms — all currently link to `construction.html`)
+- **Phase 10** — Additional pages as needed (e.g. Guestbook, Downloads, Privacy Policy, Terms — all currently link to `construction.html`)
