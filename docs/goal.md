@@ -42,13 +42,19 @@ All nav links pointing to unbuilt pages must link to `construction.html` instead
 
 ## Visual Goals
 
+> **Note (2026-08-26):** these bullets originally described a dark neon-on-black
+> direction. The site was redesigned into a lighter pastel palette during 2026-08-22
+> and the list below now describes what actually exists. The Y2K goal is unchanged —
+> only the palette moved.
+
 - Looks unmistakably Y2K at first glance — someone should recognize the era immediately
-- Neon palette (magenta, cyan, lime, yellow) on near-black backgrounds
-- Logo: oval neon badge (SVG), top-left of every page
-- Top nav bar: full-width magenta/purple strip with neon link text
-- Decorative SVG accents (neon flowers, starbursts) scattered around pages
-- Content cards with teal/dark bg and glowing neon borders
-- Neon glow pulse animation on logo and key accents
+- Bright pastel palette: pale yellow page background (`#fdf0a0`), baby-blue nav and cards (`#a8d8f0`), deep pink (`#cc1870`) and hot pink (`#ff66cc`) accents, with cyan, lime and yellow used as highlight colors
+- Logo: the "a dream or a memory" wordmark (`logo.png`), top-left of every page
+- Top nav bar: full-width strip tiled with an animated star GIF
+- Decorative accents (flowers, starbursts) scattered around pages
+- Content cards with baby-blue backgrounds and rounded frames
+- Flat colors, hard 2px drop shadows, no gradients or glow blur — period accurate
+- Zenfix display font for headings and nav; Arial for body text
 
 ## Technical Goals
 
