@@ -34,6 +34,8 @@
 ### Navigation
 Every page carries "Project Info" between "About Me" and "Gallery" in all three nav locations it has (mobile nav, sidebar nav where present, footer nav). Verified 2026-08-26: index 3 links, about/gallery/music/construction 2 each, project-info 3.
 
+All nav links across all six pages were audited 2026-08-26 for the "labelled with a page that exists but routed to `construction.html`" bug. `construction.html`'s mobile GALLERY link was the only instance and is fixed. Remaining `construction.html` targets (MORE STUFF, Guestbook, Links, Downloads, Privacy Policy, Terms) are correct — those pages are genuinely unbuilt, which is what `goal.md` requires.
+
 ### Code
 - [x] `style.css` — custom properties, reset, layout, nav, cards (+ `.card-grid--fill`), typography, decorative, footer, animations, shared lightbox, 768px breakpoint. **Unchanged this session** — the new page needed no new CSS.
 - [x] `assets/js/nav.js` — hamburger toggle
@@ -68,7 +70,6 @@ Every page carries "Project Info" between "About Me" and "Gallery" in all three 
 
 ## Known Issues
 
-- `construction.html`'s **mobile nav points GALLERY at `construction.html`** instead of `gallery.html` — pre-existing, spotted 2026-08-26, not fixed.
 - `goal.md`'s page table omits `music.html` and `project-info.html`.
 - The four "More Photos" images are portrait but render in 123×150 cards with `object-fit: cover`, so each is center-cropped. No distortion, but off-center subjects may clip — **still not visually confirmed**; the About page was never screenshotted.
 - `project-info.html`'s supervisor table leaves a wide empty channel between the gold label column and the pink value column (label column sizes to the longest label, value column absorbs the remainder). Cosmetic; not fixed.
@@ -78,7 +79,6 @@ Every page carries "Project Info" between "About Me" and "Gallery" in all three 
 ## Ready for Next Steps
 
 - Decide whether to delete the orphaned assets (Phase 8.2)
-- Fix `construction.html`'s mobile GALLERY link
 - Bring `goal.md`'s page table current
 - Optionally make about.html's "More Photos" cards click-to-enlarge for consistency with the rest of the site
 - Optionally tighten the project-info supervisor table gap and lift the "PJATK" caption contrast (plan 9.5)

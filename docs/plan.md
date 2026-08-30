@@ -91,6 +91,7 @@ All decorative and structural SVG files. These must exist before HTML is written
 - [x] **9.2** Add "Project Info" to every nav (mobile, sidebar, footer) on all pages, positioned between About Me and Gallery
 - [x] **9.3** `pjatk.png` rendered at true 1:1 ratio, uncropped (`height:auto` + `aspect-ratio:1/1`)
 - [x] **9.4** Corrected main supervisor title to "prof. dr hab. Jacek Staszewski"
+- [x] **9.6** *(added 2026-08-26)* Fixed `construction.html`'s mobile GALLERY link (pointed at `construction.html`, now `gallery.html`); audited all navs on all six pages — no other instances
 - [ ] **9.5** *(optional, observed 2026-08-26)* Supervisor table has a wide gap between the label and value columns; "PJATK" card caption (`c-lime` on light blue) reads faint. Neither requested — left as-is pending a decision.
 
 ---
