@@ -113,8 +113,18 @@ Chronological record of all build steps. Updated as work is completed.
   - Diploma statement paragraph in a standard `.content-block .body-text`
   - Supervisor credits (main / technical / theoretical) in the same table style as about.html's Quick Facts
   - Only existing color classes and inline colors already in use elsewhere — no new colors introduced
-- [x] `pjatk.png` given inline `object-fit: contain` + white backing: the card's default `object-fit: cover` was cropping the top and bottom off the circular PJATK emblem
+- [x] `pjatk.png` sizing, in two passes: first inline `object-fit: contain` + white backing (the card's default `cover` was cropping the top and bottom off the circular emblem), then — at the user's request for true original ratio — `height:auto` + `aspect-ratio:1/1` so the square 554×554 source renders uncropped at 182×182 instead of a 183×150 letterbox. Card ends up 200×221; the extra 21px is the "PJATK" caption, which the user chose to keep for consistency with every other card on the site.
 - [x] Added "Project Info" to every nav on every page — mobile nav, sidebar nav, footer nav — positioned between About Me and Gallery (11 links across 5 existing pages, verified by parse: index 3, about/gallery/music/construction 2 each)
 - [x] Verified via the running dev server: all pages return 200, all images load with real dimensions, no horizontal overflow, stylesheet and Zenfix font applied
 - [x] Updated `directory-structure.md`, `asset-catalog.md`, `plan.md` (Phase 8.1 closed, new Phase 9), and `current-state.md`
+- [x] Committed and pushed to `origin/main` as [`b561856`](https://github.com/velfairy/a-dream-or-a-memory.git) — Project Info page + real About photos
+
+### Later in the same session
+
+- [x] `project-info.html`: corrected MAIN SUPERVISOR from "prof. Jacek Staszewski" to "prof. dr hab. Jacek Staszewski". Text-only change inside the existing `<td>` — the `style` attribute is byte-for-byte unchanged, so color and font are untouched.
+- [x] Confirmed `project-info.html` renders correctly in the browser at desktop width (first screenshot of the session — the preview pane had refused to composite frames earlier)
+- [x] `music.html`: added two tracks to the `tracks` array — Jeff Buckley — Everybody Here Wants You (`hGzHCvkndnI`) and Natasha Bedingfield — Pocketful of Sunshine (`ztCMNHAT8uM`); matched the file's existing `Artist — Song` title format and column alignment
+- [x] `music.html`: playlist header bumped "PLAYLIST — 10 TRACKS" → "12 TRACKS" (it was hardcoded and would otherwise have gone stale)
+- [x] Verified in the running page: 12 rows render, array length 12, and clicking rows 11/12 loads the correct `youtube.com/embed/…` URLs with the track-name display updating
+- [ ] **Observed, not fixed** (neither was requested): `project-info.html`'s supervisor table leaves a wide empty channel between the gold label column and the pink value column, because the label column sizes to the longest label while the value column absorbs the rest. Also the "PJATK" card caption is `c-lime` (pale green) on the light-blue card and reads faint compared to labels elsewhere.
 - [ ] **Not done / open:** `construction.html`'s mobile nav still points GALLERY at `construction.html` instead of `gallery.html` (pre-existing, unrelated to this session). Orphaned-asset cleanup (Phase 8.2) still undecided, now including `placeholder-kitten.jpg`. `goal.md`'s page table still omits `music.html` and `project-info.html`.

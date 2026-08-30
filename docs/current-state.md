@@ -17,7 +17,7 @@
 ### Docs
 - [x] `docs/goal.md` — desired final state. **Slightly stale:** its page table still omits `music.html` and `project-info.html`, and lists Gallery as "planned" though it shipped.
 - [x] `docs/current-state.md` — this file
-- [x] `docs/plan.md` — current; Phase 9 (Project Info) added and complete
+- [x] `docs/plan.md` — current; Phase 9 (Project Info) added, 9.1–9.4 done, 9.5 open as an optional polish item
 - [x] `docs/action-log.md` — current through Session 4 (2026-08-26)
 - [x] `docs/directory-structure.md` — current
 - [x] `docs/asset-catalog.md` — current
@@ -26,10 +26,10 @@
 ### Pages
 - [x] `index.html` — home, sidebar, marquee, "Featured Pics!!" grid (all 4 click-to-enlarge), "Latest Updates", hit counter
 - [x] `about.html` — profile card (`me1.jpeg`, click-to-enlarge), Quick Facts (real data), Faves, "More Photos" (**now 4 real photos** — no placeholders left)
-- [x] `project-info.html` — **new 2026-08-26.** "My Diploma" heading, `pjatk.png` side photo (click-to-enlarge), diploma statement, supervisor credits table. Built from the `about.html` skeleton; uses only existing color classes.
+- [x] `project-info.html` — **new 2026-08-26.** "My Diploma" heading, `pjatk.png` side photo (click-to-enlarge, rendered square and uncropped at 182×182), diploma statement, supervisor credits table (prof. dr hab. Jacek Staszewski / mgr inż. Marcin Wichrowski / mgr Adam Trwoga). Built from the `about.html` skeleton; uses only existing color classes and needed no new CSS.
 - [x] `construction.html` — CSS worker animation, caution stripes, blink text, `underconstruction.gif`
 - [x] `gallery.html` — "Artwork Gallery", lightbox grid, 7 captioned artworks (has its own page-local `<style>` block — pre-existing exception to the single-stylesheet rule)
-- [x] `music.html` — YouTube playlist player
+- [x] `music.html` — YouTube playlist player, **12 tracks** as of 2026-08-26 (Jeff Buckley and Natasha Bedingfield added). Note: the playlist header count is hardcoded in the markup, so it must be updated by hand whenever the `tracks` array changes.
 
 ### Navigation
 Every page carries "Project Info" between "About Me" and "Gallery" in all three nav locations it has (mobile nav, sidebar nav where present, footer nav). Verified 2026-08-26: index 3 links, about/gallery/music/construction 2 each, project-info 3.
@@ -70,8 +70,10 @@ Every page carries "Project Info" between "About Me" and "Gallery" in all three 
 
 - `construction.html`'s **mobile nav points GALLERY at `construction.html`** instead of `gallery.html` — pre-existing, spotted 2026-08-26, not fixed.
 - `goal.md`'s page table omits `music.html` and `project-info.html`.
-- The four "More Photos" images are portrait but render in 123×150 cards with `object-fit: cover`, so each is center-cropped. No distortion, but off-center subjects may clip — not visually confirmed (see below).
-- Session 4 verification was DOM/network-level only: the Browser pane would not composite frames, so no screenshot was taken. Layout was confirmed by computed styles, not by eye.
+- The four "More Photos" images are portrait but render in 123×150 cards with `object-fit: cover`, so each is center-cropped. No distortion, but off-center subjects may clip — **still not visually confirmed**; the About page was never screenshotted.
+- `project-info.html`'s supervisor table leaves a wide empty channel between the gold label column and the pink value column (label column sizes to the longest label, value column absorbs the remainder). Cosmetic; not fixed.
+- `project-info.html`'s "PJATK" card caption uses `c-lime` (pale green) on the light-blue card and reads faint next to captions elsewhere. Not fixed.
+- `music.html`'s playlist header track count is hardcoded, not derived from `tracks.length` — easy to leave stale.
 
 ## Ready for Next Steps
 
@@ -79,3 +81,4 @@ Every page carries "Project Info" between "About Me" and "Gallery" in all three 
 - Fix `construction.html`'s mobile GALLERY link
 - Bring `goal.md`'s page table current
 - Optionally make about.html's "More Photos" cards click-to-enlarge for consistency with the rest of the site
+- Optionally tighten the project-info supervisor table gap and lift the "PJATK" caption contrast (plan 9.5)

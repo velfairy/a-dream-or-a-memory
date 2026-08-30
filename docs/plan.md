@@ -70,6 +70,7 @@ All decorative and structural SVG files. These must exist before HTML is written
 ## Phase 7 — Music Page *(done 2026-08-22, not originally planned; added retroactively)*
 
 - [x] **7.1** Create `music.html` — YouTube playlist embed page
+- [x] **7.2** *(added 2026-08-26)* Added 2 tracks (Jeff Buckley, Natasha Bedingfield) — playlist now 12; hardcoded header count updated to match
 
 ---
 
@@ -88,6 +89,9 @@ All decorative and structural SVG files. These must exist before HTML is written
 
 - [x] **9.1** Create `project-info.html` — "My Diploma" statement + supervisor credits, `pjatk.png` as the side photo, shared lightbox
 - [x] **9.2** Add "Project Info" to every nav (mobile, sidebar, footer) on all pages, positioned between About Me and Gallery
+- [x] **9.3** `pjatk.png` rendered at true 1:1 ratio, uncropped (`height:auto` + `aspect-ratio:1/1`)
+- [x] **9.4** Corrected main supervisor title to "prof. dr hab. Jacek Staszewski"
+- [ ] **9.5** *(optional, observed 2026-08-26)* Supervisor table has a wide gap between the label and value columns; "PJATK" card caption (`c-lime` on light blue) reads faint. Neither requested — left as-is pending a decision.
 
 ---
 
