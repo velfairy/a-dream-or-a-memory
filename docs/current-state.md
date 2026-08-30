@@ -76,6 +76,14 @@ All nav links across all six pages were audited 2026-08-26 for the "labelled wit
 - `project-info.html`'s "PJATK" card caption uses `c-lime` (pale green) on the light-blue card and reads faint next to captions elsewhere. Not fixed.
 - `music.html`'s playlist header track count is hardcoded, not derived from `tracks.length` — easy to leave stale.
 
+## Handoff — Next Session Starts Here
+
+**The user is a non-programmer.** Explain in plain language, avoid jargon, and be explicit about whether a change affects the *website itself* (`.html` / `style.css`) or only the *notes* in `docs/` — they were reasonably unsure about this distinction, and reassurance that a docs edit changes nothing visual was genuinely useful. Standing instruction from the user: **"make things work without changing the way my website looks."** Treat any visual change as needing explicit approval first.
+
+**Next topic: burning the site to a CD for university submission** — see Phase 10 in `plan.md` for the pre-check already done and the open steps. Headline: the site is in good shape for offline use (all paths relative, no `fetch`, all assets local), with **one real problem — `music.html`'s 12 tracks are YouTube embeds and will not play without internet.** That needs a decision.
+
+Nothing is mid-flight; the working tree is clean and everything is pushed.
+
 ## Ready for Next Steps
 
 - Decide whether to delete the orphaned assets (Phase 8.2)

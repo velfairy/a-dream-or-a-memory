@@ -96,6 +96,29 @@ All decorative and structural SVG files. These must exist before HTML is written
 
 ---
 
+## Phase 10 — CD / Offline Delivery *(new, 2026-08-26 — university submission requirement)*
+
+The university requires the whole website burned onto a CD. A disc has **no web server**, so the site must work when `index.html` is opened straight off the disc (`file://` protocol), and must not assume an internet connection.
+
+**Pre-check already done 2026-08-26** (findings, not fixes):
+
+- ✅ No absolute paths (`src="/..."`) anywhere — every reference is relative, which is what `file://` needs
+- ✅ No `fetch` / `XMLHttpRequest` / ES module imports — these are blocked under `file://` and the site uses none
+- ✅ No uppercase file extensions among *referenced* assets — avoids case-mangling risk from ISO9660/Joliet disc filesystems
+- ✅ Fonts, images, CSS and JS are all local files
+- ⚠️ **`music.html` will not play offline.** Its 12 tracks are YouTube iframe embeds — the only external dependency in the project (`https://www.youtube.com`, 2 references). With no internet the player frame stays blank. Needs a decision: accept it, add an explanatory note on the page, or replace with local audio files.
+- ❓ **Not yet verified:** whether the site actually renders correctly opened as `file://`. The preview pane redirects to the dev server, so this must be checked by opening `index.html` directly in a browser.
+
+**Steps:**
+
+- [ ] **10.1** Open `index.html` directly from disk (not via localhost) and check all six pages: images, fonts, CSS, nav links, hamburger menu, lightboxes
+- [ ] **10.2** Decide how to handle `music.html`'s YouTube dependency offline
+- [ ] **10.3** Decide whether to delete the 11 orphaned asset files before burning (see Phase 8.2) — they add disc size and confusion but harm nothing
+- [ ] **10.4** Assemble the exact folder to burn and confirm nothing outside it is required
+- [ ] **10.5** Decide whether `docs/` and `.claude/` belong on the submitted disc
+
+---
+
 ## Future Phases (not planned in detail yet)
 
 - **Phase 10** — Additional pages as needed (e.g. Guestbook, Downloads, Privacy Policy, Terms — all currently link to `construction.html`)
