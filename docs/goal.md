@@ -6,19 +6,21 @@ A personal multi-page website with an authentic Y2K / late-90s web aesthetic. It
 
 ---
 
-## Pages (minimum viable)
+## Pages (built)
 
 | Page | File | Purpose |
 |------|------|---------|
-| Home | `index.html` | Landing page, intro, featured content |
-| About Me | `about.html` | Personal info, photo, bio |
+| Home | `index.html` | Landing page, intro, Featured Pics, latest updates |
+| About Me | `about.html` | Personal info, photo, bio, quick facts, faves, photo grid |
+| Project Info | `project-info.html` | Diploma statement — why the project exists — and supervisor credits |
+| Gallery | `gallery.html` | Grid of real artworks, captioned with title + medium, click-to-enlarge |
+| Music | `music.html` | Winamp-style YouTube playlist player |
 
-## Pages (planned extensions)
+Nav order across the site is Home → About Me → Project Info → Gallery → Music.
 
-| Page | File | Purpose |
-|------|------|---------|
-| Gallery | `gallery.html` | Photo grid of real PNG images |
-| (more TBD) | | |
+## Pages (not yet built)
+
+Guestbook, Downloads, Links, Privacy Policy and Terms are linked from the nav and footer but have no page of their own yet — every one of those links points at `construction.html`.
 
 ## Under Construction Page
 
@@ -60,5 +62,5 @@ All nav links pointing to unbuilt pages must link to `construction.html` instead
 
 - Passes a visual "does this look Y2K?" check
 - All pages share consistent nav, footer, and color scheme
-- No broken image links before real photos are provided (placeholder kitten used)
+- No broken image links (all placeholders replaced with real photos as of 2026-08-26)
 - Mobile layout is usable, not broken
